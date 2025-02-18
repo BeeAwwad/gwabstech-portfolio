@@ -4,7 +4,7 @@ import React from "react"
 const IntroLinks = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 max-w-sm md:max-w-2xl lg:max-w-5xl mx-auto gap-4">
-      <div className="bg-amber-700 flex flex-col justify-between p-5 xl:col-span-3 space-y-5 text-white">
+      <div className="bg-amber-700 rounded-xl flex flex-col justify-between p-5 xl:col-span-3 space-y-5 text-white">
         <Icon className="text-5xl" icon={"ph:briefcase"} />
         <div className="flex flex-col gap-5">
           <p className="text-2xl max-w-96">
@@ -18,7 +18,7 @@ const IntroLinks = () => {
           </a>
         </div>
       </div>
-      <div className="bg-amber-300 flex flex-col justify-between p-5 xl:col-span-4 space-y-5 text-black">
+      <div className="bg-amber-300 rounded-xl flex flex-col justify-between p-5 xl:col-span-4 space-y-5 text-black">
         <Icon className="text-5xl" icon={"material-symbols:folder-outline"} />
         <div className="flex flex-col gap-5">
           <p className="text-2xl max-w-80">
