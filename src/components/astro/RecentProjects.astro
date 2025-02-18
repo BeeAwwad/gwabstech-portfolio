@@ -1,0 +1,43 @@
+---
+import { Icon } from '@iconify/react/dist/iconify.js'
+import LazyImage from '../ui/LazyImage'
+const projects = [
+    {
+        name: "paywave",
+        description: "lorem ipsum here",
+        image: "revo"
+    },
+    {
+        name: "paywave",
+        description: "lorem ipsum here",
+        image: "revo"
+    },
+    {
+        name: "paywave",
+        description: "lorem ipsum here",
+        image: "revo"
+    },
+
+]
+---
+
+<div class="space-y-10">
+        <h2 class="text-5xl flex-col sm:flex-row md:text-7xl xl:text-8xl 2xl:text-9xl flex gap-2.5 md:flex-col uppercase font-extrabold items-center lg:items-start">
+            <span>Recent</span>
+            <span class="text-gray-300">Projects</span>
+        </h1>
+        <div class="flex flex-col lg:justify-start gap-5 lg:gap-12">
+            {projects.map((project) => (
+                 <a class="flex justify-between text-center p-5 hover:bg-gray-50 transition-colors duration-500 rounded-2xl group" href={`/projects/${project.name}`}>
+                    <div class="flex gap-5 items-center">
+                        <LazyImage src={project.image} alt={project.name} className={"aspect-square w-28 lg:w-36 rounded-2xl"} client:load />
+                        <div class="text-start">
+                            <h3 class="text-2xl">{project.name}</h3>
+                            <p class="text-gray-400">{project.description}</p>
+                        </div>
+                    </div>
+                    <Icon icon={"fluent:arrow-up-right-16-regular"} className="text-2xl text-red-500 font-bold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" client:load />
+                 </a>
+            ))}
+        </div>
+    </div>

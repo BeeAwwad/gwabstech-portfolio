@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-const LazyImage = ({ src, alt, clasName }) => {
+const LazyImage = ({ src, alt, className, imageClass = "" }) => {
   const divRef = useRef(null)
 
   useEffect(() => {
@@ -35,13 +35,13 @@ const LazyImage = ({ src, alt, clasName }) => {
   return (
     <div
       ref={divRef}
-      className={`blur-load w-full relative z-20  bg-no-repeat bg-cover bg-center`}
+      className={`blur-load relative z-20  bg-no-repeat bg-cover bg-center overflow-hidden ${className}`}
       style={{ backgroundImage: `url('/${src}-small.png')` }}
     >
       <img
         src={"/placeholder.png"}
         alt={alt}
-        className={`w-full z-10 object-cover shadow-lg ${clasName}`}
+        className={`w-full z-10 object-cover ${imageClass}`}
         loading="lazy"
       />
     </div>
