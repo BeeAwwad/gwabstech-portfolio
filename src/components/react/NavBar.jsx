@@ -32,7 +32,7 @@ const Navbar = () => {
   ]
   return (
     <nav className="bg-amber-300 py-2">
-      <ul className="flex px-5 py-2 gap-3 bg-amber-400 w-fit mx-auto justify-center">
+      <ul className="flex px-3 py-1.5 lg:px-5 lg:py-2 gap-1 lg:gap-3 bg-amber-400 w-fit mx-auto justify-center">
         {NavLinks.map((link, index) => (
           <NavLink key={index + 1} {...link} />
           // <li key={index + 1}>{link.text}</li>
@@ -49,7 +49,7 @@ function NavLink({ link, text, icon }) {
         href={`#${link}`}
         className="group p-2 text-center rounded font-bold transition-all relative"
       >
-        <Icon icon={icon} className="text-2xl" />
+        <Icon icon={icon} className="text-xl lg:text-2xl" />
         <span className="absolute text-sm font-normal bg-amber-700 py-1 px-2 text-amber-100 left-1/2 transform -translate-x-1/2 top-full -mt-5 opacity-0 transition-all duration-300 group-hover:mt-0 group-hover:opacity-100">
           {text}
         </span>

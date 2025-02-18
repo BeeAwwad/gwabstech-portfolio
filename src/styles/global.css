@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+/* Skip links */
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  translate: 0 -100%;
+  transition: translate 200ms ease-in-out;
+}
+
+.skip-link:focus {
+  translate: 0;
+}
+
+/* Blury images */
+
+.blur-load::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+}
+
+.blur-load.loaded::before {
+  /* content: none; */
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(77, 16, 102, 0);
+  }
+
+  50% {
+    background-color: rgba(77, 16, 102, 0.1);
+  }
+
+  100% {
+    background-color: rgba(77, 16, 102, 0);
+  }
+}
+
+.blur-load {
+  background-color: #f3f3f3;
+}
+
+.blur-load.loaded > img {
+  opacity: 1;
+}
+
+.blur-load > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}

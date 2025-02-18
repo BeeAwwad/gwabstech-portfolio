@@ -1,8 +1,14 @@
 ---
+const pageTitle = "Gwabstech"
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/astro/Header.astro';
+import './src/styles/global.css' 
+import BreifAbout from '../components/astro/BreifAbout.astro';
 ---
 
-<Layout>
+<Layout title={pageTitle}>
     <Header />
+    <main class="flex flex-col lg:flex-row flex-1 items-center lg:items-start lg:max-w-[1650px] max-w-3xl mx-auto">    
+        <BreifAbout />    
+    </main>
 </Layout>

@@ -1,0 +1,18 @@
+---
+import './src/styles/global.css' 
+import LazyImage from '../ui/LazyImage'
+import Socials from '../react/Socials'
+---
+
+<div class="px-2.5 bg-white mx-auto lg:mx-0">
+<div class="py-8 px-5 flex gap-6 flex-col w-fit">
+    <div class=" max-w-64 lg:max-w-60 mx-auto">
+        <LazyImage src={"random-dude"} alt={"Abubakar Gwabare"} clasName={"aspect-[4/3] md:aspect-[3/4]"} client:load />
+    </div>
+    <div class="text-center space-y-5">
+        <h1 class="mb-6">Abubakar Gwabare</h1>
+        <p class="text-slate-500 max-w-72 lg:max-w-64 mx-auto">A Software Engeneer who has developed countless innovative solutions.</p>
+        <Socials client:load />
+    </div>
+</div>
+</div>

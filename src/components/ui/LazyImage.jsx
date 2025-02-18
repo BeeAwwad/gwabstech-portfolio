@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-const LazyImage = ({ src, alt, aspect }) => {
+const LazyImage = ({ src, alt, clasName }) => {
   const divRef = useRef(null)
 
   useEffect(() => {
@@ -14,7 +14,6 @@ const LazyImage = ({ src, alt, aspect }) => {
           const image = div.querySelector("img")
 
           const onLoad = () => {
-            console.log("Image loaded, adding 'loaded' class to div")
             div.classList.add("loaded")
             div.removeEventListener("load", onLoad)
           }
@@ -36,13 +35,13 @@ const LazyImage = ({ src, alt, aspect }) => {
   return (
     <div
       ref={divRef}
-      className={`blur-load relative z-20  bg-no-repeat bg-cover bg-center`}
+      className={`blur-load w-full relative z-20  bg-no-repeat bg-cover bg-center`}
       style={{ backgroundImage: `url('/${src}-small.png')` }}
     >
       <img
         src={"/placeholder.png"}
         alt={alt}
-        className={`w-full aspect-[${aspect}] z-10 shadow-lg`}
+        className={`w-full z-10 object-cover shadow-lg ${clasName}`}
         loading="lazy"
       />
     </div>
