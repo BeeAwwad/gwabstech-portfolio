@@ -32,7 +32,7 @@ const Socials = () => {
           rel="noopener noreferrer"
           className="p-1.5 px-2 rounded-md hover:bg-slate-200 transition-all"
         >
-          <Icon icon={link.icon} className="text-xl" />
+          <Icon icon={link.icon} className="text-2xl" />
         </a>
       ))}
     </div>
