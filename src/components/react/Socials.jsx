@@ -23,7 +23,7 @@ const Socials = () => {
     },
   ]
   return (
-    <div class="flex w-fit mx-auto gap-2">
+    <div className="flex w-fit mx-auto gap-2">
       {links.map((link) => (
         <a
           key={link.name}
