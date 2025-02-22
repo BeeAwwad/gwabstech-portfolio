@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-
+import React from "react"
 const LazyImage = ({ src, alt, className, imageClass = "" }) => {
   const divRef = useRef(null)
 

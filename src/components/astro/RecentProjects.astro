@@ -21,7 +21,7 @@ const projects = [
 ]
 ---
 
-<div class="space-y-10">
+<div class="recent-projects space-y-10">
         <h2 class="text-5xl flex-col sm:flex-row md:text-7xl xl:text-8xl 2xl:text-[7rem] flex gap-2.5 md:flex-col uppercase font-extrabold items-center lg:items-start">
             <span class="tracking-tighter">Recent</span>
             <span class="text-gray-300 tracking-tighter">Projects</span>
@@ -41,3 +41,33 @@ const projects = [
             ))}
         </div>
     </div>
+
+    <script>
+        import { gsap } from 'gsap';
+        import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      
+        gsap.registerPlugin(ScrollTrigger);
+      
+        window.addEventListener('load', () => {
+        const container = document.querySelector('.recent-projects');
+    
+        gsap.fromTo(container, 
+            {
+            y: -50, 
+            autoAlpha: 0
+            }, 
+            {
+            y: 0,
+            autoAlpha: 1,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: container,
+                start: 'top 80%',
+                toggleActions: 'play none none none', 
+                markers: false,
+            }
+            }
+        );
+        });
+      </script>
