@@ -45,11 +45,11 @@ function NavLink({ link, text, icon }) {
   return (
     <li className="grid place-items-center mx-2">
       <a
-        href={`#${link}`}
+        href={`${link}`}
         className="group p-2 text-center rounded font-bold transition-all relative"
       >
         <Icon icon={icon} className="text-lg text-black lg:text-xl z-10" />
-        <span className="absolute text-xs font-normal bg-gray-200 py-1 px-2 text-black left-1/2 transform -translate-x-1/2 -top-1 opacity-0 transition-all duration-500 group-hover:top-12 rounded-md group-hover:opacity-100 z-0">
+        <span className="absolute text-xs pointer-events-none font-normal bg-gray-200 py-1 px-2 text-black left-1/2 transform -translate-x-1/2 -top-1 opacity-0 transition-all duration-500 group-hover:top-12 rounded-md group-hover:opacity-100 z-0">
           {text}
         </span>
       </a>

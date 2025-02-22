@@ -47,9 +47,9 @@ const stats = [
     gsap.registerPlugin(ScrollTrigger);
   
     window.addEventListener('load', () => {
-    const introContainer = document.querySelector('.intro-container');
+    const container = document.querySelector('.intro-container');
 
-    gsap.fromTo(introContainer, 
+    gsap.fromTo(container, 
         {
         y: -50, 
         autoAlpha: 0
@@ -60,8 +60,8 @@ const stats = [
         duration: 1,
         ease: 'power2.out',
         scrollTrigger: {
-            trigger: introContainer,
-            start: 'top 80%',
+            trigger: container,
+            start: 'top 70%',
             toggleActions: 'play none none none', 
             markers: false,
         }

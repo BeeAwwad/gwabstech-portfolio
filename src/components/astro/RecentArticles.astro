@@ -1,0 +1,76 @@
+---
+import { Icon } from '@iconify/react/dist/iconify.js'
+const workExperience = [
+    {
+        name: "Northern Nigeria's Prospects for Internet Data Apps and Bill Payment",
+        description: "Nigeria's fintech sector has experienced a significant upheaval in the last ten years, changing how consumers obtain necessities like bill payment and mobile data top-ups.",
+        date: "December 18, 2024",
+        link: "https://www.gwabstechsolutions.com.ng/2024/12/simplifying-lives-northern-nigerias.html"
+    },
+    {
+        name: "Technology Adoption in Northern Nigeria: Kano, the Superpower",
+        description: "Across the past ten years, technology has drastically changed people's lives, economies, and cultures all across the world. Often regarded as a latecomer to adopting advanced technology, Northern Nigeria is now catching up.",
+        date: "December 11, 2024",
+        link: "https://www.gwabstechsolutions.com.ng/2024/12/technology-adoption-in-northern-nigeria.html"
+    },
+    {
+        name: "Native and Cross-Platform Approaches in Mobile App Development",
+        description: "When it comes to mobile app development, there are two main approaches: native and cross-platform. Native apps are built specifically for a particular operating system, such as iOS or Android",
+        date: "May 14, 2023",
+        link: "https://www.gwabstechsolutions.com.ng/2023/05/comparing-native-and-cross-platform.html"
+    },
+
+]
+---
+
+<div class="recent-articles space-y-10">
+        <h2 class="text-5xl flex-col sm:flex-row md:text-7xl xl:text-8xl 2xl:text-[7rem] flex gap-2.5 md:flex-col uppercase font-extrabold items-center lg:items-start">
+            <span class="tracking-tighter">Recent</span>
+            <span class="text-gray-300 tracking-tighter">Articles</span>
+        </h1>
+        <div class="flex flex-col lg:justify-start gap-5 lg:gap-12">
+            {workExperience.map((blog) => (
+                 <a class="flex justify-between p-5 hover:bg-gray-50 transition-colors duration-500 rounded-2xl group" href={blog.link}>
+                    <div class="flex flex-col max-w-lg gap-5">
+                       <h3 class="text-3xl font-medium">{blog.name}</h3>
+                       <p class="text-gray-400">{blog.description}</p>
+                        <div class="flex justify-between">
+                       <p class="text-gray-400">{blog.date}</p>
+                            <p>6min read</p>
+                        </div>
+                    </div>
+                    <Icon icon={"fluent:arrow-up-right-16-regular"} className="hidden lg:block text-2xl text-red-500 font-bold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" client:load />
+                 </a>
+            ))}
+        </div>
+    </div>
+
+    <script>
+        import { gsap } from 'gsap';
+        import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      
+        gsap.registerPlugin(ScrollTrigger);
+      
+        window.addEventListener('load', () => {
+        const container = document.querySelector('.recent-articles');
+    
+        gsap.fromTo(container, 
+            {
+            y: -50, 
+            autoAlpha: 0
+            }, 
+            {
+            y: 0,
+            autoAlpha: 1,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: container,
+                start: 'top 70%',
+                toggleActions: 'play none none none', 
+                markers: false,
+            }
+            }
+        );
+        });
+      </script>
