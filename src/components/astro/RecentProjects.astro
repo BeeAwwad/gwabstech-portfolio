@@ -23,20 +23,20 @@ const projects = [
 
 <div class="recent-projects space-y-10">
         <h2 class="text-5xl flex-col sm:flex-row md:text-7xl xl:text-8xl 2xl:text-[7rem] flex gap-2.5 md:flex-col uppercase font-extrabold items-center lg:items-start">
-            <span class="tracking-tighter">Recent</span>
-            <span class="text-gray-300 tracking-tighter">Projects</span>
+            <span class="text-[#eee] tracking-tighter">Recent</span>
+            <span class="text-gray-600 tracking-tighter">Projects</span>
         </h1>
         <div class="flex flex-col lg:justify-start gap-5 lg:gap-12">
             {projects.map((project) => (
-                 <a class="flex justify-between text-center p-5 hover:bg-gray-50 transition-colors duration-500 rounded-2xl group" href={`/projects/${project.name}`}>
+                 <a class="flex justify-between text-center p-5 hover:bg-[#31363f] transition-colors duration-500 rounded-2xl group" href={`/projects/${project.name}`}>
                     <div class="flex gap-5 items-center">
                         <LazyImage src={project.image} alt={project.name} className={"aspect-square w-28 lg:w-36 rounded-2xl"} client:load />
                         <div class="text-start">
-                            <h3 class="text-2xl">{project.name}</h3>
+                            <h3 class="text-[#eee] text-2xl">{project.name}</h3>
                             <p class="text-gray-400">{project.description}</p>
                         </div>
                     </div>
-                    <Icon icon={"fluent:arrow-up-right-16-regular"} className="text-2xl text-red-500 font-bold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" client:load />
+                    <Icon icon={"fluent:arrow-up-right-16-regular"} className="hidden lg:block text-2xl text-red-500 font-bold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" client:load />
                  </a>
             ))}
         </div>

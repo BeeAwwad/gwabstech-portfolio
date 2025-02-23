@@ -1,54 +1,10 @@
 ---
-const pageTitle = "Blogs"
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/astro/Header.astro';
+const pageTitle = "Projects"
 import './src/styles/global.css' 
-import Name from '../components/astro/Name.astro';
-import Footer from '../components/astro/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 import RecentProjects from '../components/astro/RecentProjects.astro';
 ---
 
 <Layout title={pageTitle}>
-    <Header />
-    <main class="grid grid-cols-1 pt-10 md:pt-16 gap-10 lg:pt-24 lg:grid-cols-8 max-w-3xl lg:max-w-5xl xl:max-w-6xl lg:gap-12 2xl:gap-24 px-5 mx-auto">    
-        <div class="name-container lg:col-span-3 h-fit" id="name">
-            <Name />
-        </div>
-        <div class="content-container lg:col-span-5" id="content">
-            <RecentProjects />
-        </div>
-    </main>
-    <Footer />
+    <RecentProjects />
 </Layout>
-
-<script>
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  
-    gsap.registerPlugin(ScrollTrigger);
-  
-    const mm = gsap.matchMedia();
-  
-    mm.add("(min-width: 1025px)", () => {
-      window.addEventListener('load', () => {
-        const nameElement = document.getElementById('name');
-        const contentElement = document.getElementById('content');
-  
-        const pinDuration = contentElement.offsetHeight - nameElement.offsetHeight;
-  
-        ScrollTrigger.create({
-          trigger: contentElement,
-          start: 'top+=-100 top',
-          end: `+=${pinDuration}`,
-          pin: nameElement,
-          pinSpacing: true,
-          markers: false, 
-          scrub: true
-        });
-      });
-  
-      return () => {
-      };
-    });
-  </script>
-  

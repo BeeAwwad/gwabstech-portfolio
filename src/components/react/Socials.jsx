@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js"
 import React from "react"
 
-const Socials = () => {
+const Socials = ({ iconClassName = "", anchorClassName = "" }) => {
   const links = [
     {
       name: "linkedin",
@@ -32,9 +32,12 @@ const Socials = () => {
           href={link.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-1.5 px-2 rounded-md hover:bg-slate-200 transition-all"
+          className={`p-1.5 px-2 rounded-md hover:bg-[#eee] group transition-colors ${anchorClassName}`}
         >
-          <Icon icon={link.icon} className="text-2xl" />
+          <Icon
+            icon={link.icon}
+            className={`text-2xl group-hover:text-red-500 transition-colors ${iconClassName}`}
+          />
         </a>
       ))}
     </div>
