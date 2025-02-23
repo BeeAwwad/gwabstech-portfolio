@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Google Fonts */
+@theme {
+  --font-archivo-black: "Archivo Black", "sans-serif";
+  --font-roboto: "Roboto", "sans-serif";
+}
 
 /* Skip links */
 
@@ -59,23 +66,19 @@
 
 /* Side bar */
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #eee;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #31363f;
   /* border-radius: 5px; */
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #76abae;
 }
